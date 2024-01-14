@@ -6,7 +6,7 @@ const apiUrl = 'https://www.googleapis.com/youtube/v3/videos';
 const  playlistId = 'PLmbqX3EgB-VMK2fBCUKYgBuJn-Dlrh9Ky';
 
 // Construct the URL for the YouTube Data API request
-const url = `${apiUrl}?part=snippet&playlistid=${playListId}&key=${apiKey}`;
+const url = `${apiUrl}?part=snippet&playlistId=${playListId}&key=${apiKey}`;
 
 // Make a Fetch API request
 fetch(url, {
