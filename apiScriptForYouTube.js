@@ -1,12 +1,11 @@
-// Replace 'YOUR_API_KEY' with your actual YouTube Data API key
 const apiKey = 'AIzaSyDeWYJ8dZyvM4oOTF01FP-JD4FVpaID6JM';
-const apiUrl = 'https://www.googleapis.com/youtube/v3/videos';
+const apiUrl = 'https://www.googleapis.com/youtube/v3/playlistItems';  // Use the correct endpoint for playlists
 
-// Replace 'PLAYLIST_ID' with the actual ID of the video you want to retrieve
-const  playlistId = 'PLmbqX3EgB-VMK2fBCUKYgBuJn-Dlrh9Ky';
+// Replace 'PLAYLIST_ID' with the actual ID of the playlist you want to retrieve
+const playlistId = 'PLmbqX3EgB-VMK2fBCUKYgBuJn-Dlrh9Ky';
 
 // Construct the URL for the YouTube Data API request
-const url = `${apiUrl}?part=snippet&playlistId=${playListId}&key=${apiKey}`;
+const url = `${apiUrl}?part=snippet&playlistId=${playlistId}&key=${apiKey}`;
 
 // Make a Fetch API request
 fetch(url, {
