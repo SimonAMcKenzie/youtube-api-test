@@ -1,5 +1,5 @@
 const apiKey = 'AIzaSyDeWYJ8dZyvM4oOTF01FP-JD4FVpaID6JM';
-const apiUrl = 'https://www.googleapis.com/youtube/v3/playlistItems';  // Use the correct endpoint for playlists
+const apiUrl = 'https://www.googleapis.com/youtube/v3/playlistItems';
 
 // Replace 'PLAYLIST_ID' with the actual ID of the playlist you want to retrieve
 const playlistId = 'PLmbqX3EgB-VMK2fBCUKYgBuJn-Dlrh9Ky';
