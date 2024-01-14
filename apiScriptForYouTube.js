@@ -25,9 +25,31 @@ fetch(url, {
   })
   .then(data => {
     // Handle the data from the API response
-    console.log('YouTube Playlist API Response:', data);
-  })
-  .catch(error => {
-    // Handle any errors that occurred during the fetch
-    console.error('Fetch Error:', error);
-  });
+    const videosContainer = document.getElementById('videos-container');
+
+  // Check if there are items in the playlist
+  if (data.items.length > 0) {
+    const mostRecentVideo = data.items[0];
+    const videoTitle = mostRecentVideo.snippet.title;
+    const videoId = mostRecentVideo.snippet.resourceId.videoId;
+
+    // Create a new iframe element for the most recent video
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube.com/embed/${videoId}`;
+    iframe.width = 560;
+    iframe.height = 315;
+
+    // Create a paragraph element for the video title
+    const titleParagraph = document.createElement('p');
+    titleParagraph.textContent = videoTitle;
+
+    // Append the iframe and title to the videos container
+    videosContainer.appendChild(iframe);
+    videosContainer.appendChild(titleParagraph);
+  } else {
+    console.log('No videos found in the playlist.');
+  }
+})
+.catch(error => {
+  console.error('Fetch Error:', error);
+});
